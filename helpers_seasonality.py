@@ -20,14 +20,14 @@ def download_data(start, end, ticker):
 
   df_stock = pd.DataFrame()
   historical = yf.download(ticker, start, end)
-  df_stock["Adj Close"] = historical["Adj Close"]
+  df_stock["Close"] = historical["Close"]
   df_stock["Volume"] = historical["Volume"]
   df_stock["Year"] = df_stock.index.year
   df_stock.index = df_stock.index.strftime("%Y-%m-%d")
 
 
 
-  data["Adj Close"] = df_stock["Adj Close"]
+  data["Close"] = df_stock["Close"]
   data["Volume"] = df_stock["Volume"]
   data.bfill(inplace=True)
   data.index = pd.to_datetime(data.index)
@@ -54,9 +54,9 @@ def calculate_seasonality(start, end, ticker):
     data_year.index = data_year.index.strftime("%m-%d")
     
 
-    initial_year_price = data_year.at["01-01", "Adj Close"]
-    data_year["Adj Close"] = ((data_year["Adj Close"] - initial_year_price)/ initial_year_price) * 100
-    df_seasonality[year] = data_year["Adj Close"]
+    initial_year_price = data_year.at["01-01", "Close"]
+    data_year["Close"] = ((data_year["Close"] - initial_year_price)/ initial_year_price) * 100
+    df_seasonality[year] = data_year["Close"]
 
   df_seasonality.bfill(inplace = True)
   df_seasonality.ffill(inplace = True)
