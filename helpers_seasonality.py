@@ -4,15 +4,7 @@ import numpy
 import datetime as dt
 
 
-import os
-from dotenv import load_dotenv
-load_dotenv()
 
-MY_API_TOKEN = os.getenv("API_KEY")
-
-print(MY_API_TOKEN)
-SYMBOL_NAME = 'AAPL'
-EXCHANGE_CODE = 'US'
 
 ticker = "AAPL"
 
