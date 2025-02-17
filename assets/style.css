@@ -1,0 +1,108 @@
+:root{
+    --altezza-input: 5vh;
+    --font-size-form: 1.2vw;
+    --border-side: 15%;
+    --background-graph: rgba(229,236,246,255);
+
+}
+
+
+*{
+    font-family: "Roboto";
+    padding: 0;
+    margin: 0;
+}
+
+.header{
+    display: flex;
+    flex-direction: column;
+    padding-left: var(--border-side) ;
+    padding-right: var(--border-side);
+    background-color: var(--background-graph);
+    height: 15vh;
+}
+
+H4{
+    font-size: 3vh;
+    text-align: center;
+}
+
+
+#input-div{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    padding-top: 2vh;
+}
+
+.content{
+    background-color: white;
+    padding-left: var(--border-side);
+    padding-right: var(--border-side);
+}
+
+.content-graph{
+    background-color: inherit;
+}
+
+#graph{
+    height: 75vh;
+}
+
+
+.dash-dropdown{
+    font-size: var(--font-size-form);
+    height: var(--altezza-input);
+    width: 5vw;
+}
+
+#ticker.dash-dropdown{
+    width: 30vw;
+}
+
+.ticker .Select-control{
+    height: var(--altezza-input);
+    border-radius: 0;
+    border: 1px solid var(--background-graph);
+}
+.leverage-ratio .Select-control{
+    height: var(--altezza-input);
+    border-radius: 0;
+    border: 1px solid var(--background-graph);
+}
+.ticker .Select-control:hover{
+    background-color: var(--background-graph);
+}
+
+
+
+.DateInput_input{
+    font-size: var(--font-size-form);
+    height: var(--altezza-input);
+    border: 1px solid var(--background-graph);
+
+}
+.DateInput_input:hover{
+    background-color: var(--background-graph);
+}
+
+.DateRangePickerInput__withBorder{
+
+    border: 0;
+    border-radius: 0;
+}
+
+#footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: var(--background-graph);
+    text-align: center;
+}
+
+a{
+    color: black;
+}
