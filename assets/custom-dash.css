@@ -1,0 +1,62 @@
+
+/* Additional styles for Dash components */
+.dash-table-container {
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 1rem;
+}
+
+.dash-spreadsheet-container {
+    font-family: "Poppins", sans-serif !important;
+}
+
+.dash-spreadsheet-inner th {
+    background-color: #5d4d7e !important;
+    color: white !important;
+    font-weight: 500;
+    padding: 10px;
+    border: none !important;
+}
+
+.dash-spreadsheet-inner td {
+    background-color: #685489 !important;
+    color: white !important;
+    padding: 8px;
+    border: none !important;
+}
+
+.dash-spreadsheet-inner tr {
+    border: none !important;
+}
+
+/* Control panel styling */
+.dash-control-panel {
+    background-color: #685489;
+    border-radius: 10px;
+    padding: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Button styling */
+.dash-button {
+    background-color: #8c7aad;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    padding: 0.5rem 1rem;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+.dash-button:hover {
+    background-color: #9d89be;
+}
+
+/* Improve loading animation */
+._dash-loading {
+    margin: auto;
+    color: #ffffff;
+    text-align: center;
+    background-color: rgba(118, 98, 157, 0.7);
+    border-radius: 10px;
+}

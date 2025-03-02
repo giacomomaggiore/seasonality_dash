@@ -37,27 +37,29 @@ info_div = html.Div(id = "info-div", children = [sector])
 mention_footer = html.A("Blackswan Quants", href='https://www.linkedin.com/company/106626489/admin/dashboard/', target="_blank")
 footer = html.Div(id = "footer", children=mention_footer)
 
-app.layout = [
+app.layout = html.Div(style={'height': '100vh', 'overflow': 'hidden'}, children=[
+    # HEADER
+    html.Header([
+        title, 
+        subtitle
+    ], className="header"),
     
-    #HEADER
-    html.Header([title, subtitle
-            ],
-             className = "header"),
-    
-    
-    html.Div(className="content", children = [
+    # MAIN CONTENT
+    html.Div(className="content", children=[
+        input_div,
         
-    input_div,
-        
-    html.Div(
-        className = "content-graph",
-        children = [dcc.Graph(id ="graph", figure=False), dcc.Graph(id="volume-graph", figure = False)]),],
+        html.Div(
+            className="content-graph",
+            children=[
+                dcc.Graph(id="graph", figure=False, config={'displayModeBar': False}), 
+                dcc.Graph(id="volume-graph", figure=False, config={'displayModeBar': False})
+            ]
+        ),
+    ]),
     
-    
-            ),
     info_div,
     footer
-]
+])
 
 
 @callback(
@@ -84,28 +86,61 @@ def update_graph(ticker, start_date, end_date):
         ticktext=["Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec"],
         tickvals=[1,2,3,4,5,6,7,8,9,10,11,12])
     
-    
-    
-    
     years = data.columns.to_list()
     
     print(years)
     print(data.index)
 
-    #print(data)
+    # Create line chart with custom styling
     figure = px.line(data, y = years)
 
     figure.update_xaxes(
-    ticktext=["Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec"],
-    tickvals=["01-January", "01-February","01-March","01-April","01-May","01-June","01-July","01-August","01-September","01-October","01-November","01-December"]
+        ticktext=["Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec"],
+        tickvals=["01-January", "01-February","01-March","01-April","01-May","01-June","01-July","01-August","01-September","01-October","01-November","01-December"]
     )
-    volume_figure.update_layout(xaxis_title=None)
-    volume_figure.update_layout(yaxis_title=None)
-    volume_figure.update_layout(legend_title_text='Volume')
     
-    figure.update_layout(xaxis_title=None)
-    figure.update_layout(yaxis_title=None)
-    figure.update_layout(legend_title_text='Years')
+    # Apply styling to both charts
+    template = {
+        "layout": {
+            "paper_bgcolor": "rgba(0,0,0,0)",
+            "plot_bgcolor": "rgba(0,0,0,0)",
+            "font": {"color": "#ffffff"},
+            "xaxis": {"gridcolor": "rgba(255,255,255,0.1)"},
+            "yaxis": {"gridcolor": "rgba(255,255,255,0.1)"}
+        }
+    }
+    
+    # Style volume figure
+    volume_figure.update_layout(
+        xaxis_title=None,
+        yaxis_title=None,
+        legend_title_text='Volume',
+        template=template,
+        margin=dict(l=20, r=20, t=20, b=20),
+        legend=dict(
+            orientation="h",
+            yanchor="bottom",
+            y=1.02,
+            xanchor="right",
+            x=1
+        )
+    )
+    
+    # Style main figure
+    figure.update_layout(
+        xaxis_title=None,
+        yaxis_title=None,
+        legend_title_text='Years',
+        template=template,
+        margin=dict(l=20, r=20, t=20, b=20),
+        legend=dict(
+            orientation="h",
+            yanchor="bottom",
+            y=1.02,
+            xanchor="right",
+            x=1
+        )
+    )
     
     return figure, volume_figure
     

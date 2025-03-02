@@ -1,122 +1,224 @@
-:root{
-    --altezza-input: 5vh;
-    --font-size-form: 1.2vw;
-    --border-side: 15%;
-    --background-graph: rgba(229,236,246,255);
 
+:root{
+    --main-bg-color: #76629d;
+    --secondary-bg-color: #5d4d7e;
+    --text-color: #ffffff;
+    --muted-text-color: #f0f0f0;
+    --accent-color: #8c7aad;
+    --chart-bg-color: #685489;
+    --border-radius: 10px;
+    --padding-standard: 1.5rem;
+    --font-size-form: 1rem;
 }
 
-
-*{
-    font-family: "Roboto";
+* {
+    font-family: "Poppins", sans-serif;
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
 }
 
-.header{
+body {
+    background-color: var(--main-bg-color);
+    color: var(--text-color);
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+}
+
+.header {
     display: flex;
     flex-direction: column;
-    padding-left: var(--border-side) ;
-    padding-right: var(--border-side);
-    background-color: var(--background-graph);
+    padding: var(--padding-standard);
+    background-color: var(--secondary-bg-color);
     height: 15vh;
+    border-radius: 0 0 var(--border-radius) var(--border-radius);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-H4{
-    font-size: 3vh;
-    text-align: center;
+h1 {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
 }
 
+h4 {
+    font-size: 1.2rem;
+    font-weight: 500;
+    opacity: 0.9;
+}
 
-#input-div{
+#input-div {
     width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-
-    padding-top: 2vh;
+    padding: var(--padding-standard);
+    align-items: center;
 }
 
-.content{
-    background-color: white;
-    padding-left: var(--border-side);
-    padding-right: var(--border-side);
+.content {
+    background-color: var(--main-bg-color);
+    padding: 0 2rem;
+    height: 85vh;
+    display: flex;
+    flex-direction: column;
 }
 
-.content-graph{
-    background-color: inherit;
-    justify-content: center;
+.content-graph {
+    background-color: var(--chart-bg-color);
+    border-radius: var(--border-radius);
+    padding: 1rem;
+    margin-bottom: 1rem;
+    flex: 1;
+    overflow: hidden;
 }
 
-#graph{
+#graph {
     height: 50vh;
-
-}
-#volume-graph{
-    margin-top: -10vh;
-    height: 40vh;
 }
 
-.bglayer{
-    width: 10vw;
+#volume-graph {
+    height: 25vh;
+    margin-top: -4vh;
 }
 
-
-
-
-
-
-.dash-dropdown{
+/* Dropdown styling */
+.dash-dropdown {
     font-size: var(--font-size-form);
-    height: var(--altezza-input);
-    width: 5vw;
+    background-color: var(--secondary-bg-color);
+    border-radius: var(--border-radius);
+    color: var(--text-color);
 }
 
-#ticker.dash-dropdown{
+#ticker.dash-dropdown {
     width: 30vw;
 }
 
-.ticker .Select-control{
-    height: var(--altezza-input);
-    border-radius: 0;
-    border: 1px solid var(--background-graph);
-}
-.leverage-ratio .Select-control{
-    height: var(--altezza-input);
-    border-radius: 0;
-    border: 1px solid var(--background-graph);
-}
-.ticker .Select-control:hover{
-    background-color: var(--background-graph);
+.ticker .Select-control {
+    height: 2.5rem;
+    border-radius: var(--border-radius);
+    border: none;
+    background-color: var(--secondary-bg-color);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+.ticker .Select-value-label {
+    color: var(--text-color) !important;
+}
 
+.ticker .Select-placeholder,
+.ticker .Select-arrow-zone {
+    color: var(--muted-text-color);
+}
 
-.DateInput_input{
+.ticker .Select-menu-outer {
+    background-color: var(--secondary-bg-color);
+    border: none;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.ticker .Select-option {
+    background-color: var(--secondary-bg-color);
+    color: var(--text-color);
+}
+
+.ticker .Select-option.is-focused {
+    background-color: var(--accent-color);
+}
+
+/* Date picker styling */
+.DateInput_input {
     font-size: var(--font-size-form);
-    height: var(--altezza-input);
-    border: 1px solid var(--background-graph);
-
-}
-.DateInput_input:hover{
-    background-color: var(--background-graph);
-}
-
-.DateRangePickerInput__withBorder{
-
-    border: 0;
-    border-radius: 0;
+    height: 2.5rem;
+    border: none;
+    background-color: var(--secondary-bg-color);
+    color: var(--text-color);
+    border-radius: var(--border-radius);
 }
 
-#footer{
+.DateInput {
+    border-radius: var(--border-radius);
+    overflow: hidden;
+}
+
+.DateRangePickerInput__withBorder {
+    border: none;
+    border-radius: var(--border-radius);
+    background-color: var(--secondary-bg-color);
+}
+
+.DateRangePickerInput {
+    background-color: var(--secondary-bg-color);
+}
+
+.DateRangePickerInput_arrow {
+    color: var(--text-color);
+}
+
+.CalendarDay {
+    border-radius: 50%;
+}
+
+.CalendarMonth_caption {
+    color: var(--text-color);
+}
+
+/* Footer styling */
+#info-div {
+    padding: 1rem;
+    margin-top: -1rem;
+}
+
+#footer {
     position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;
-    background-color: var(--background-graph);
+    background-color: var(--secondary-bg-color);
     text-align: center;
+    padding: 0.5rem;
 }
 
-a{
-    color: black;
+a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Hide scrollbar but allow scrolling */
+::-webkit-scrollbar {
+    display: none;
+}
+
+/* For Firefox */
+* {
+    scrollbar-width: none;
+}
+
+/* Chart styling overrides */
+.js-plotly-plot .plotly .main-svg {
+    background-color: transparent !important;
+}
+
+.js-plotly-plot .plotly .bg {
+    fill: transparent !important;
+}
+
+.js-plotly-plot .plotly .xtick text, 
+.js-plotly-plot .plotly .ytick text {
+    fill: var(--text-color) !important;
+}
+
+.js-plotly-plot .plotly .xgrid, 
+.js-plotly-plot .plotly .ygrid {
+    stroke: rgba(255, 255, 255, 0.1) !important;
+}
+
+.js-plotly-plot .plotly .legendtext {
+    fill: var(--text-color) !important;
 }
