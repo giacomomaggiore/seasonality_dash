@@ -32,7 +32,7 @@ body {
     display: flex;
     flex-direction: column;
     padding: var(--padding-standard);
-    background: linear-gradient(to right, var(--gradient-start), var(--main-bg-color));
+    background: linear-gradient(to bottom, var(--gradient-start), var(--main-bg-color));
     height: 18vh; /* Taller header */
     border-radius: 0 0 var(--border-radius) var(--border-radius);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
@@ -71,7 +71,7 @@ h4 {
     border-radius: var(--border-radius);
     padding: 1.5rem; /* More padding inside */
     margin: 0 4rem 1rem 4rem; /* Bigger side margins */
-    flex: 0.9; /* Reduced from 1 to make it shorter */
+    flex: 0.85; /* Further reduced to make it shorter */
     overflow: hidden;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
