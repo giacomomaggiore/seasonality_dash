@@ -8,11 +8,10 @@ import datetime as dt
 from datetime import date
 import yfinance as yf
 
-app = Dash(
-    meta_tags=[
-        {"name": "viewport", "content": "width=device-width, initial-scale=1.0"}
-    ]
-)
+app = Dash(meta_tags=[{
+    "name": "viewport",
+    "content": "width=device-width, initial-scale=1.0"
+}])
 server = app.server
 
 # Add inline styles to ensure dropdowns appear above content
@@ -147,7 +146,6 @@ def update_graph(ticker, start_date, end_date):
     end_date = end_date[0:4] + "-12-31"
 
     stock = yf.Tickers(ticker)
-    sector = stock.tickers[ticker].info["sector"]
 
     data = calculate_seasonality(start_date, end_date, ticker)
     volume_data = volume_seasonality(start_date, end_date, ticker)
