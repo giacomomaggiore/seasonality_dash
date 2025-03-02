@@ -8,8 +8,41 @@ import datetime as dt
 from datetime import date
 import yfinance as yf
 
-app = Dash()
+app = Dash(
+    meta_tags=[
+        {"name": "viewport", "content": "width=device-width, initial-scale=1.0"}
+    ]
+)
 server = app.server
+
+# Add inline styles to ensure dropdowns appear above content
+app.index_string = '''
+<!DOCTYPE html>
+<html>
+    <head>
+        {%metas%}
+        <title>{%title%}</title>
+        {%favicon%}
+        {%css%}
+        <style>
+            .dash-dropdown .Select-menu-outer {
+                z-index: 9999 !important;
+            }
+            .DayPicker, .SingleDatePicker_picker, .DateRangePicker_picker {
+                display: none !important;
+            }
+        </style>
+    </head>
+    <body>
+        {%app_entry%}
+        <footer>
+            {%config%}
+            {%scripts%}
+            {%renderer%}
+        </footer>
+    </body>
+</html>
+'''
 
 title = html.H1(children='SEASONALITY', style={'textAlign': 'center'})
 subtitle = dcc.Markdown("""
@@ -41,6 +74,19 @@ date_range_picker = dcc.DatePickerRange(
     max_date_allowed=dt.datetime.today(),
     start_date=date(2020, 8, 5),
     end_date=dt.date.today(),
+    display_format='DD/MM/YYYY',
+    with_portal=False,
+    with_full_screen_portal=False,
+    calendar_orientation='horizontal',
+    is_RTL=False,
+    clearable=False,
+    # Disable the calendar and force manual input
+    show_outside_days=False,
+    initial_visible_month=None,
+    reopen_calendar_on_clear=False,
+    first_day_of_week=0,
+    stay_open_on_select=False,
+    updatemode='singledate',
 )
 
 sector = html.H4(id="sector", children="")

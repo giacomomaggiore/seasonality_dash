@@ -146,11 +146,16 @@ h4 {
     border: none;
     border-radius: var(--border-radius);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    position: absolute;
+    max-height: 300px;
+    overflow-y: auto;
 }
 
 .ticker .Select-option {
     background-color: var(--secondary-bg-color);
     color: var(--text-color);
+    padding: 8px 12px;
 }
 
 .ticker .Select-option.is-focused {
@@ -166,6 +171,7 @@ h4 {
     color: var(--text-color);
     border-radius: var(--border-radius);
     transition: all 0.3s ease;
+    text-align: center;
 }
 
 .DateInput_input:hover, .DateInput_input:focus {
@@ -176,6 +182,7 @@ h4 {
 .DateInput {
     border-radius: var(--border-radius);
     overflow: hidden;
+    width: 150px;
 }
 
 .DateRangePickerInput__withBorder {
@@ -198,12 +205,29 @@ h4 {
     color: var(--text-color);
 }
 
-.CalendarDay {
-    border-radius: 50%;
+/* Hide the calendar popup */
+.DayPickerKeyboardShortcuts_show,
+.DayPickerKeyboardShortcuts_close,
+.DayPickerNavigation,
+.CalendarMonthGrid,
+.CalendarMonth,
+.CalendarDay,
+.DayPicker_weekHeaders,
+.DayPicker_weekHeader,
+.DayPicker {
+    display: none !important;
 }
 
-.CalendarMonth_caption {
-    color: var(--text-color);
+/* Hide the calendar icon in date input */
+.DateInput_fangStroke,
+.DateInput_fangShape,
+.DateInput_fang {
+    display: none !important;
+}
+
+/* Fix dropdown issues */
+.Select-menu-outer {
+    z-index: 9999 !important;
 }
 
 /* Footer styling */
