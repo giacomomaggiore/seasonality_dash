@@ -206,7 +206,8 @@ def update_graph(ticker, start_date, end_date):
                                             yanchor="bottom",
                                             y=1.02,
                                             xanchor="right",
-                                            x=1))
+                                            x=1),
+                                yaxis=dict(showticklabels=False))
 
     # Style main figure
     figure.update_layout(xaxis_title=None,
@@ -218,7 +219,8 @@ def update_graph(ticker, start_date, end_date):
                                      yanchor="bottom",
                                      y=1.02,
                                      xanchor="right",
-                                     x=1))
+                                     x=1),
+                         yaxis=dict(showticklabels=False))
 
     return figure, volume_figure
 
