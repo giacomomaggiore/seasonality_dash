@@ -83,13 +83,9 @@ h4 {
     flex: 0.85; /* Increased to make it taller */
     overflow: hidden;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
-.content-graph:hover {
-    box-shadow: 0 6px 16px rgba(140, 122, 173, 0.3);
-    transform: translateY(-3px);
-}
+/* Hover effect removed */
 
 #graph {
     height: 38vh; /* Made shorter */
