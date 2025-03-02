@@ -116,7 +116,7 @@ def update_graph(ticker, start_date, end_date):
         yaxis_title=None,
         legend_title_text='Volume',
         template=template,
-        margin=dict(l=20, r=20, t=20, b=20),
+        margin=dict(l=30, r=30, t=30, b=30),
         legend=dict(
             orientation="h",
             yanchor="bottom",
@@ -132,7 +132,7 @@ def update_graph(ticker, start_date, end_date):
         yaxis_title=None,
         legend_title_text='Years',
         template=template,
-        margin=dict(l=20, r=20, t=20, b=20),
+        margin=dict(l=30, r=30, t=30, b=30),
         legend=dict(
             orientation="h",
             yanchor="bottom",

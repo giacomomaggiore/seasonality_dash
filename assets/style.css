@@ -1,18 +1,18 @@
 
 :root{
-    --main-bg-color: #76629d;
-    --secondary-bg-color: #5d4d7e;
+    --main-bg-color: #594c76; /* Darker background */
+    --secondary-bg-color: #4a3d65;
     --text-color: #ffffff;
     --muted-text-color: #f0f0f0;
     --accent-color: #8c7aad;
-    --chart-bg-color: #685489;
+    --chart-bg-color: #483c5e; /* Darker chart background */
     --border-radius: 10px;
     --padding-standard: 1.5rem;
     --font-size-form: 1rem;
 }
 
 * {
-    font-family: "Poppins", sans-serif;
+    font-family: "Satoshi", sans-serif;
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -31,7 +31,7 @@ body {
     flex-direction: column;
     padding: var(--padding-standard);
     background-color: var(--secondary-bg-color);
-    height: 15vh;
+    height: 18vh; /* Taller header */
     border-radius: 0 0 var(--border-radius) var(--border-radius);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -58,8 +58,8 @@ h4 {
 
 .content {
     background-color: var(--main-bg-color);
-    padding: 0 2rem;
-    height: 85vh;
+    padding: 0 3rem; /* More padding on sides */
+    height: 82vh; /* Adjusted for taller header */
     display: flex;
     flex-direction: column;
 }
@@ -67,18 +67,18 @@ h4 {
 .content-graph {
     background-color: var(--chart-bg-color);
     border-radius: var(--border-radius);
-    padding: 1rem;
-    margin-bottom: 1rem;
+    padding: 1.5rem; /* More padding inside */
+    margin: 0 1.5rem 1rem 1.5rem; /* Added side margins */
     flex: 1;
     overflow: hidden;
 }
 
 #graph {
-    height: 50vh;
+    height: 42vh; /* Shorter graph */
 }
 
 #volume-graph {
-    height: 25vh;
+    height: 20vh; /* Shorter volume graph */
     margin-top: -4vh;
 }
 

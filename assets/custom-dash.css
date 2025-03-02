@@ -7,11 +7,11 @@
 }
 
 .dash-spreadsheet-container {
-    font-family: "Poppins", sans-serif !important;
+    font-family: "Satoshi", sans-serif !important;
 }
 
 .dash-spreadsheet-inner th {
-    background-color: #5d4d7e !important;
+    background-color: #4a3d65 !important;
     color: white !important;
     font-weight: 500;
     padding: 10px;
@@ -19,7 +19,7 @@
 }
 
 .dash-spreadsheet-inner td {
-    background-color: #685489 !important;
+    background-color: #483c5e !important;
     color: white !important;
     padding: 8px;
     border: none !important;
@@ -31,7 +31,7 @@
 
 /* Control panel styling */
 .dash-control-panel {
-    background-color: #685489;
+    background-color: #483c5e;
     border-radius: 10px;
     padding: 1rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -57,6 +57,6 @@
     margin: auto;
     color: #ffffff;
     text-align: center;
-    background-color: rgba(118, 98, 157, 0.7);
+    background-color: rgba(74, 61, 101, 0.7);
     border-radius: 10px;
 }
