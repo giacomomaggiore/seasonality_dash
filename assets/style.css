@@ -1,14 +1,16 @@
 
 :root{
-    --main-bg-color: #594c76; /* Darker background */
-    --secondary-bg-color: #4a3d65;
+    --main-bg-color: #000000; /* Black background */
+    --secondary-bg-color: #1a1a1a;
     --text-color: #ffffff;
     --muted-text-color: #f0f0f0;
     --accent-color: #8c7aad;
-    --chart-bg-color: #483c5e; /* Darker chart background */
+    --chart-bg-color: #2b1f40; /* Darker purple chart background */
     --border-radius: 10px;
     --padding-standard: 1.5rem;
     --font-size-form: 1rem;
+    --gradient-start: #3a2b58;
+    --gradient-end: #594c76;
 }
 
 * {
@@ -30,10 +32,10 @@ body {
     display: flex;
     flex-direction: column;
     padding: var(--padding-standard);
-    background-color: var(--secondary-bg-color);
+    background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
     height: 18vh; /* Taller header */
     border-radius: 0 0 var(--border-radius) var(--border-radius);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
 h1 {
@@ -68,9 +70,10 @@ h4 {
     background-color: var(--chart-bg-color);
     border-radius: var(--border-radius);
     padding: 1.5rem; /* More padding inside */
-    margin: 0 1.5rem 1rem 1.5rem; /* Added side margins */
+    margin: 0 4rem 1rem 4rem; /* Bigger side margins */
     flex: 1;
     overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 #graph {
@@ -175,9 +178,10 @@ h4 {
     left: 0;
     bottom: 0;
     width: 100%;
-    background-color: var(--secondary-bg-color);
+    background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
     text-align: center;
     padding: 0.5rem;
+    box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.3);
 }
 
 a {
