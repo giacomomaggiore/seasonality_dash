@@ -45,11 +45,25 @@ H4{
 
 .content-graph{
     background-color: inherit;
+    justify-content: center;
 }
 
 #graph{
-    height: 75vh;
+    height: 50vh;
+
 }
+#volume-graph{
+    margin-top: -10vh;
+    height: 40vh;
+}
+
+.bglayer{
+    width: 10vw;
+}
+
+
+
+
 
 
 .dash-dropdown{

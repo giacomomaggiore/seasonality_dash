@@ -66,3 +66,35 @@ def calculate_seasonality(start, end, ticker):
   df_seasonality.index = df_seasonality.index.strftime("%d-%B")
   return df_seasonality
 
+def volume_seasonality(start, end, ticker):
+  data = download_data(start, end, ticker)
+
+  years = data["Year"].unique()
+
+  month_range = numpy.arange(1,13,1)
+
+  volume_df = pd.DataFrame(index=month_range, columns=years)
+
+  for year in years:
+    data_year = data[data["Year"] == year]
+    volume_df[year] = data_year["Volume"].groupby(data_year.index.month).sum()
+
+    initial_volume = volume_df.at[1, year]
+    volume_df[year] = ((volume_df[year] / initial_volume))
+  
+  volume_df["Average"] = volume_df.mean(axis = 1, numeric_only=True)
+  
+  volume_df.drop(years, axis=1, inplace=True)
+  return volume_df
+  data = []
+  for index, row in volume_df.iterrows():
+    temp_dict = {}
+    temp_dict["date"] = "2024-"+str(index)
+    temp_dict["volume"] = row["mean"]
+    
+    data.append(temp_dict)
+  
+  return data
+
+volume_data = volume_seasonality(start, end, ticker)
+print(volume_data)
