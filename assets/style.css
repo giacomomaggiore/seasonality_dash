@@ -33,14 +33,17 @@ body {
     flex-direction: column;
     padding: var(--padding-standard);
     background: linear-gradient(to bottom, var(--gradient-start), var(--main-bg-color));
-    height: 18vh; /* Taller header */
+    height: 22vh; /* Taller header */
     border-radius: 0 0 var(--border-radius) var(--border-radius);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    justify-content: center;
 }
 
 h1 {
     font-weight: 600;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    font-size: 2.5rem;
 }
 
 h4 {
@@ -70,8 +73,8 @@ h4 {
     background-color: var(--chart-bg-color);
     border-radius: var(--border-radius);
     padding: 1.5rem; /* More padding inside */
-    margin: 0 4rem 1rem 4rem; /* Bigger side margins */
-    flex: 0.85; /* Further reduced to make it shorter */
+    margin: 0 6rem 1rem 6rem; /* Wider side margins */
+    flex: 0.75; /* Further reduced to make it shorter */
     overflow: hidden;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
@@ -192,6 +195,15 @@ a {
 
 a:hover {
     text-decoration: underline;
+}
+
+.subtitle-markdown:hover {
+    color: var(--accent-color) !important;
+    transform: translateY(-2px);
+}
+
+.subtitle-markdown a:hover {
+    color: #b19fd0;
 }
 
 /* Hide scrollbar but allow scrolling */

@@ -19,8 +19,12 @@ subtitle = dcc.Markdown("""
                         style={
                             "textAlign": "center",
                             "color": "lightgray",
-                            "fontSize": "18px"
-                        })
+                            "fontSize": "18px",
+                            "marginTop": "0.5rem",
+                            "transition": "color 0.3s, transform 0.3s",
+                            "cursor": "pointer"
+                        },
+                        className="subtitle-markdown")
 
 asset_dropdown = dcc.Dropdown(options=[{
     'label': asset.get("name"),
